@@ -3,688 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지우의 음악 이야기 🎵</title>
-    <!-- 구글 폰트: 귀엽고 따스한 폰트 적용 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Sunflower:wght@500;700&display=swap" rel="stylesheet">
-    
+    <title>🌟 은은한 별빛 스테이션</title>
     <style>
+        /* 전체적인 스타일 및 색상 설정 */
         :root {
-            --bg-color: #faf9fd; /* 부드러운 화이트/아이보리 배경 */
-            --card-bg: #ffffff;
-            --main-purple: #d8c4f8; /* 파스텔 연보라 */
-            --dark-purple: #8e71c7; /* 포인트 보라 */
-            --text-color: #534b62; /* 눈이 편안한 딥 그레이 */
-            --border-color: #eee9f8;
-            --shadow: 0 8px 20px rgba(180, 160, 220, 0.15);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
+            --main-color: #9b72cf; /* 시그니처 라벤더 색상 */
+            --sub-color: #f3ebff;  /* 연보라 포인트 톤 */
+            --bg-color: #fcf9ff;   /* 눈이 편안한 크림/연보라 배경 */
+            --text-color: #4a4058; /* 부드러운 짙은 회갈색 텍스트 */
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Gowun Dodum', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
+        /* 상단 네비게이션바 */
         header {
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
+            background-color: var(--white);
+            box-shadow: 0 4px 15px rgba(155, 114, 207, 0.08);
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            z-index: 100;
         }
 
-        .site-title {
-            font-family: 'Sunflower', sans-serif;
-            font-size: 1.5rem;
-            color: var(--dark-purple);
-            text-decoration: none;
-        }
-
-        /* 네비게이션바 (데스크톱 기본형, 모바일 토글형) */
         nav {
             display: flex;
-            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
         nav a {
             text-decoration: none;
             color: var(--text-color);
-            font-weight: bold;
+            font-weight: 600;
             font-size: 0.95rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 15px;
+            padding: 8px 14px;
+            border-radius: 20px;
             transition: all 0.3s ease;
         }
 
         nav a:hover {
-            background-color: var(--main-purple);
-            color: #fff;
+            background-color: var(--sub-color);
+            color: var(--main-color);
         }
 
-        /* 햄버거 메뉴 버튼 (기본은 모바일에서만 노출) */
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            flex-direction: column;
-            gap: 5px;
-            padding: 5px;
-            z-index: 1001;
+        /* 메인 컨테이너 */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
 
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background-color: var(--dark-purple);
-            border-radius: 3px;
-            transition: all 0.3s ease;
-        }
-
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-        }
-
+        /* 각 섹션 공통 스타일 */
         section {
-            background-color: var(--card-bg);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border-color);
+            background-color: var(--white);
+            border-radius: 24px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(155, 114, 207, 0.05);
+            border: 2px solid var(--sub-color);
         }
 
-        .section-title {
-            font-family: 'Sunflower', sans-serif;
+        h2 {
+            color: var(--main-color);
             font-size: 1.4rem;
-            color: var(--dark-purple);
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-top: 0;
+            border-bottom: 2px dashed var(--sub-color);
+            padding-bottom: 10px;
         }
 
-        /* HOME 섹션 */
-        .intro-box {
+        /* 🏠 Home */
+        #home {
             text-align: center;
-            padding: 1rem 0;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, var(--white) 0%, var(--sub-color) 100%);
         }
 
+        #home h1 {
+            color: var(--main-color);
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+
+        /* 👤 Profile */
+        .profile-box {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
         .profile-img {
-            width: 110px;
-            height: 110px;
+            width: 120px;
+            height: 120px;
+            background-color: var(--sub-color);
             border-radius: 50%;
-            background-color: var(--main-purple);
-            margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            animation: floatAnim 3s ease-in-out infinite;
+            font-size: 3rem;
         }
 
-        @keyframes floatAnim {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-6px); }
+        /* 💻 Projects/Skills, 🌱 Growth, 🎬 Play Lab, ✉️ Contact */
+        ul {
+            padding-left: 20px;
         }
 
-        /* ABOUT ME 섹션 */
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+        li {
+            margin-bottom: 8px;
         }
 
-        .about-item {
-            background-color: #fcfbfe;
-            padding: 1rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--main-purple);
-        }
-
-        .playlist {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .music-card {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background-color: #fcfbfe;
-            padding: 1rem;
-            border-radius: 15px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-
-        .music-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--main-purple);
-        }
-
-        .album-art {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            background-color: var(--main-purple);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            transition: transform 0.5s ease;
-        }
-
-        .music-card.playing .album-art {
-            animation: spinArt 2s linear infinite;
-        }
-
-        @keyframes spinArt {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .music-info {
-            flex-grow: 1;
-        }
-
-        .music-title {
-            font-weight: bold;
-            color: var(--text-color);
-        }
-
-        .music-artist {
-            font-size: 0.85rem;
-            color: #888;
-            margin-bottom: 0.3rem;
-        }
-
-        .lyrics {
-            font-size: 0.85rem;
-            color: var(--dark-purple);
-            font-style: italic;
-        }
-
-        .play-status {
-            font-size: 0.8rem;
-            background: var(--main-purple);
-            color: white;
-            padding: 0.2rem 0.6rem;
-            border-radius: 20px;
-            display: none;
-        }
-
-        .music-card.playing .play-status {
-            display: inline-block;
-        }
-
-        .guestbook-form {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .guestbook-form input, .guestbook-form textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            font-family: inherit;
-            outline: none;
-            background-color: #fcfbfe;
-        }
-
-        .guestbook-form input:focus, .guestbook-form textarea:focus {
-            border-color: var(--dark-purple);
-        }
-
-        .guestbook-form button {
-            background-color: var(--main-purple);
-            color: #fff;
-            border: none;
-            padding: 0.8rem;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .guestbook-form button:hover {
-            background-color: var(--dark-purple);
-        }
-
-        .guest-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.8rem;
-            max-height: 400px;
-            overflow-y: auto;
-            padding-right: 5px;
-        }
-
-        .guest-item {
-            background-color: #fcfbfe;
-            padding: 1rem;
-            border-radius: 10px;
-            font-size: 0.9rem;
-            position: relative;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .guest-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 0.3rem;
-        }
-
-        .guest-name {
-            font-weight: bold;
-            color: var(--dark-purple);
-        }
-
-        .delete-btn {
-            background: none;
-            border: none;
-            color: #ccc;
-            cursor: pointer;
-            font-size: 0.8rem;
-            padding: 2px 6px;
-            border-radius: 4px;
-            transition: color 0.2s;
-        }
-
-        .delete-btn:hover {
-            color: #ff6b6b;
-            background-color: #fff0f0;
-        }
-
-        /* 커스텀 모달 알림창 (alert 대체용) */
-        .custom-modal {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .custom-modal.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: white;
-            padding: 1.5rem 2rem;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 300px;
-            width: 90%;
-        }
-
-        .modal-content p {
-            margin-bottom: 1.2rem;
-            font-weight: bold;
-        }
-
-        .modal-btn {
-            background-color: var(--dark-purple);
-            color: white;
-            border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-family: inherit;
-        }
-
-        /* 푸터 */
         footer {
             text-align: center;
-            padding: 2rem;
-            font-size: 0.85rem;
-            color: #aaa;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: flex;
-            }
-
-            nav {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: rgba(255, 255, 255, 0.98);
-                flex-direction: column;
-                align-items: center;
-                gap: 0;
-                max-height: 0;
-                overflow: hidden;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.05);
-                transition: max-height 0.3s ease-in-out, padding 0.3s ease;
-            }
-
-            nav.open {
-                max-height: 250px;
-                padding: 1rem 0;
-            }
-
-            nav a {
-                width: 80%;
-                text-align: center;
-                padding: 0.8rem;
-                font-size: 1.1rem;
-            }
-
-            /* 햄버거 아이콘 X자로 변환 애니메이션 */
-            .hamburger.open span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-            .hamburger.open span:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.open span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
+            padding: 30px;
+            color: #88789c;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- 상단 메뉴바 & 햄버거 -->
+    <!-- 상단 메뉴바 -->
     <header>
-        <a href="#home" class="site-title">지우의 음악 이야기 🎵</a>
-        
-        <button class="hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-
-        <nav id="navMenu">
-            <a href="#home" class="nav-link">HOME</a>
-            <a href="#about" class="nav-link">ABOUT ME</a>
-            <a href="#playlist" class="nav-link">MY PLAYLIST</a>
-            <a href="#guestbook" class="nav-link">GUESTBOOK</a>
+        <nav>
+            <a href="#home">🏠 Home</a>
+            <a href="#profile">👤 Profile</a>
+            <a href="#projects">💻 Projects/Skills</a>
+            <a href="#growth">🌱 Growth</a>
+            <a href="#playlab">🎬 Play Lab</a>
+            <a href="#contact">✉️ Contact</a>
         </nav>
     </header>
 
-    <main>
-        <!-- HOME 섹션 -->
+    <div class="container">
+
+        <!-- 🏠 Home -->
         <section id="home">
-            <div class="intro-box">
-                <div class="profile-img">🎧</div>
-                <h2>안녕하세요, 지우의 공간에 오신 걸 환영해요!</h2>
-                <p style="margin-top: 0.8rem; color: #777;">
-                    음악과 함께하는 따스한 일상을 기록하는 공간입니다.<br>
-                    오늘 여러분의 하루를 채워준 노래는 무엇인가요?
-                </p>
-            </div>
+            <h1>✨ 환영합니다! 은은한 별빛 스테이션 ✨</h1>
+            <p>고등학교 1학년, 꿈을 차곡차곡 쌓아가는 공간입니다.<br>저의 작은 우주에 오신 걸 환영해요! 💜</p>
         </section>
 
-        <!-- ABOUT ME 섹션 -->
-        <section id="about">
-            <h2 class="section-title">✨ ABOUT ME</h2>
-            <div class="about-grid">
-                <div class="about-item">
-                    <strong>이름:</strong> 지우 ( Jiwoo )
-                </div>
-                <div class="about-item">
-                    <strong>신분:</strong> 고등학교 1학년 🌸
-                </div>
-                <div class="about-item">
-                    <strong>취미:</strong> 예쁜 앨범 커버 모으기, 가사 받아 적기
-                </div>
-                <div class="about-item">
-                    <strong>좋아하는 시간:</strong> 방과 후 이어폰 끼고 집에 걸어가는 시간
+        <!-- 👤 Profile -->
+        <section id="profile">
+            <h2>👤 Profile</h2>
+            <div class="profile-box">
+                <div class="profile-img">🌸</div>
+                <div>
+                    <p><strong>이름 / 별명:</strong> 김고일 / 몽글이</p>
+                    <p><strong>소속:</strong> 고등학교 1학년 (새싹 루키! 🌱)</p>
+                    <p><strong>취미:</strong> 예쁜 문구류 모으기, 플레이리스트 디깅, 코딩 공부 시작하기</p>
+                    <p><strong>MBTI:</strong> INFP (마음은 따스하고 생각은 반짝반짝 ✨)</p>
                 </div>
             </div>
         </section>
 
-        <!-- MY PLAYLIST 섹션 -->
-        <section id="playlist">
-            <h2 class="section-title">💿 MY PLAYLIST</h2>
-            <p style="font-size: 0.85rem; color: #888; margin-bottom: 1rem;">* 곡을 클릭해 재생 효과를 켜고 꺼보세요!</p>
-            <div class="playlist">
-                
-                <!-- 곡 카드 1 -->
-                <div class="music-card" onclick="togglePlay(this)">
-                    <div class="album-art">🎨</div>
-                    <div class="music-info">
-                        <div class="music-title">사랑스러운 하루</div>
-                        <div class="music-artist">지우의 최애 아티스트</div>
-                        <div class="lyrics">"햇살이 내리쬐는 길을 걸으며 들었던 따스한 노래"</div>
-                    </div>
-                    <span class="play-status">재생중 🎵</span>
-                </div>
-
-                <!-- 곡 카드 2 -->
-                <div class="music-card" onclick="togglePlay(this)">
-                    <div class="album-art">🌙</div>
-                    <div class="music-info">
-                        <div class="music-title">밤하늘과 이어폰</div>
-                        <div class="music-artist">인디 밴드</div>
-                        <div class="lyrics">"가장 지쳤던 날 마음을 토닥여주던 예쁜 가사"</div>
-                    </div>
-                    <span class="play-status">재생중 🎵</span>
-                </div>
-
-                <!-- 곡 카드 3 -->
-                <div class="music-card" onclick="togglePlay(this)">
-                    <div class="album-art">🌸</div>
-                    <div class="music-info">
-                        <div class="music-title">봄날의 설렘</div>
-                        <div class="music-artist">어쿠스틱 플레이리스트</div>
-                        <div class="lyrics">"듣기만 해도 마음이 연보라빛으로 물드는 기분"</div>
-                    </div>
-                    <span class="play-status">재생중 🎵</span>
-                </div>
-
-            </div>
+        <!-- 💻 Projects/Skills -->
+        <section id="projects">
+            <h2>💻 Projects/Skills</h2>
+            <p>제가 지금까지 해본 작은 도전들과 관심 있는 기술들이에요!</p>
+            <ul>
+                <li><strong>HTML/CSS 기초:</strong> 나만의 첫 웹사이트 직접 만들기 프로젝트 완료!</li>
+                <li><strong>Python 스터디:</strong> 기초 문법을 익히고 간단한 계산기 프로그램 만들어보기 🐍</li>
+                <li><strong>Notion 기록 습관:</strong> 일상과 공부 계획을 깔끔하게 정리하는 나만의 노하우 📝</li>
+            </ul>
         </section>
 
-        <!-- GUESTBOOK 섹션 -->
-        <section id="guestbook">
-            <h2 class="section-title">💌 GUESTBOOK</h2>
-            <form class="guestbook-form" id="guestbookForm">
-                <input type="text" id="guestName" placeholder="닉네임을 입력해주세요" required autocomplete="off">
-                <textarea id="guestText" rows="3" placeholder="지우에게 남기고 싶은 따뜻한 한 마디나 추천 음악을 적어주세요 🎵" required></textarea>
-                <button type="submit">방명록 남기기</button>
-            </form>
-
-            <div class="guest-list" id="guestList">
-                <!-- 자바스크립트로 LocalStorage 데이터를 불러와 동적으로 렌더링 -->
-            </div>
+        <!-- 🌱 Growth -->
+        <section id="growth">
+            <h2>🌱 Growth (성장 일기)</h2>
+            <p>매일 조금씩 자라나는 저의 성장 기록장입니다.</p>
+            <ul>
+                <li><strong>2026. 3월:</strong> 고등학교 입학! 새로운 친구들과 설레는 첫 출발 🎒</li>
+                <li><strong>2026. 6월:</strong> 첫 중간고사 무사히 마치고 나만의 공부법 찾아가는 중 💡</li>
+                <li><strong>현재:</strong> 웹사이트 제작이라는 새로운 취미를 발견하고 한 뼘 더 성장 중!</li>
+            </ul>
         </section>
-    </main>
 
-    <!-- 커스텀 알림 모달 -->
-    <div class="custom-modal" id="customModal">
-        <div class="modal-content">
-            <p id="modalMessage">알림 내용</p>
-            <button class="modal-btn" onclick="closeModal()">확인</button>
-        </div>
+        <!-- 🎬 Play Lab -->
+        <section id="playlab">
+            <h2>🎬 Play Lab (취향 & 놀이터)</h2>
+            <p>제가 좋아하는 것들로 가득 채운 보물창고예요.</p>
+            <ul>
+                <li>🎵 <strong>요즘 자주 듣는 플레이리스트:</strong> 감성적인 인디 음악과 로파이 힙합</li>
+                <li>📚 <strong>인생 책/영화:</strong> 마음에 위로를 주는 포근한 성장물</li>
+                <li>🎨 <strong>소소한 낙서:</strong> 아이패드로 끄적이는 귀여운 캐릭터 그리기</li>
+            </ul>
+        </section>
+
+        <!-- ✉️ Contact -->
+        <section id="contact">
+            <h2>✉️ Contact</h2>
+            <p>저에게 따뜻한 인사를 건네고 싶거나 궁금한 점이 있다면 아래로 연락 주세요!</p>
+            <ul>
+                <li>📧 <strong>E-mail:</strong> my_sweet_email@email.com (예시)</li>
+                <li>💬 <strong>Instagram:</strong> @starry_space_01 (예시)</li>
+                <li>💌 방명록 기능은 조금 더 공부해서 다음에 추가해 볼게요!</li>
+            </ul>
+        </section>
+
     </div>
 
     <footer>
-        <p>© 2026. 지우의 음악 이야기. All rights reserved.</p>
+        <p>© 2026. 고1 몽글이의 은은한 별빛 스테이션. All rights reserved. 💜</p>
     </footer>
 
-    <script>
-        // 1. 햄버거 메뉴 토글 기능
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const navMenu = document.getElementById('navMenu');
-        const navLinks = document.querySelectorAll('.nav-link');
-
-        hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('open');
-            navMenu.classList.toggle('open');
-        });
-
-        // 모바일에서 메뉴 링크 클릭 시 자동으로 메뉴 닫기
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburgerBtn.classList.remove('open');
-                navMenu.classList.remove('open');
-            });
-        });
-
-        // 2. 플레이리스트 음악 재생 토글 인터랙션
-        function togglePlay(cardElement) {
-            // 다른 카드들의 재생 상태 해제 (선택사항: 원하면 동시 재생 허용 가능하지만 하나만 켜지게 구성)
-            const allCards = document.querySelectorAll('.music-card');
-            allCards.forEach(card => {
-                if(card !== cardElement) {
-                    card.classList.remove('playing');
-                }
-            });
-            cardElement.classList.toggle('playing');
-        }
-
-        // 3. 커스텀 모달 알림 함수 (alert 대체)
-        function showModal(message) {
-            const modal = document.getElementById('customModal');
-            const modalMessage = document.getElementById('modalMessage');
-            modalMessage.textContent = message;
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('customModal');
-            modal.classList.remove('active');
-        }
-
-        // 4. LocalStorage 기반 방명록 기능
-        const STORAGE_KEY = 'jiwoo_guestbook_data';
-
-        // 초기 방명록 데이터 (기본값 설정)
-        const defaultGuests = [
-            { id: 1, name: '친구1 💜', text: '지우야 홈페이지 너무 예쁘다! 추천해준 노래 잘 들을게 🎶' },
-            { id: 2, name: '익명의 놀러온 사람', text: '파스텔 연보라 톤이 너무 감성적이에요! 잘 구경하고 갑니다.' }
-        ];
-
-        function getGuests() {
-            const data = localStorage.getItem(STORAGE_KEY);
-            if (!data) {
-                localStorage.setItem(STORAGE_KEY, JSON.stringify(defaultGuests));
-                return defaultGuests;
-            }
-            try {
-                return JSON.parse(data);
-            } catch (e) {
-                return defaultGuests;
-            }
-        }
-
-        function saveGuests(guests) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
-        }
-
-        function renderGuests() {
-            const guestListEl = document.getElementById('guestList');
-            const guests = getGuests();
-            
-            guestListEl.innerHTML = '';
-
-            if (guests.length === 0) {
-                guestListEl.innerHTML = '<div style="text-align: center; color: #aaa; padding: 1rem;">아직 남겨진 방명록이 없어요. 첫 번째 글을 남겨보세요! ✨</div>';
-                return;
-            }
-
-            guests.forEach(item => {
-                const div = document.createElement('div');
-                div.className = 'guest-item';
-                div.innerHTML = `
-                    <div class="guest-header">
-                        <div class="guest-name">${escapeHtml(item.name)}</div>
-                        <button class="delete-btn" onclick="deleteGuest(${item.id})" title="삭제">삭제</button>
-                    </div>
-                    <div>${escapeHtml(item.text)}</div>
-                `;
-                guestListEl.appendChild(div);
-            });
-        }
-
-        // XSS 방어용 이스케이프 함수
-        function escapeHtml(str) {
-            return str.replace(/[&<>'"]/g, 
-                tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
-            );
-        }
-
-        // 방명록 등록 이벤트
-        const guestbookForm = document.getElementById('guestbookForm');
-        guestbookForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const nameInput = document.getElementById('guestName');
-            const textInput = document.getElementById('guestText');
-
-            const newEntry = {
-                id: Date.now(),
-                name: nameInput.value.trim(),
-                text: textInput.value.trim()
-            };
-
-            const guests = getGuests();
-            guests.unshift(newEntry); // 최신 글이 위로 오도록 추가
-            saveGuests(guests);
-
-            nameInput.value = '';
-            textInput.value = '';
-
-            renderGuests();
-            showModal('방명록이 따스하게 등록되었습니다! 💌');
-        });
-
-        // 방명록 삭제 기능
-        window.deleteGuest = function(id) {
-            let guests = getGuests();
-            guests = guests.filter(item => item.id !== id);
-            saveGuests(guests);
-            renderGuests();
-        };
-
-        // 페이지 로드 시 방명록 렌더링 실행
-        window.addEventListener('DOMContentLoaded', () => {
-            renderGuests();
-        });
-    </script>
 </body>
 </html>
