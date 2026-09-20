@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🌟 은은한 별빛 스테이션</title>
+    <title>🍋 수현이의 로봇 공학 연구실</title>
     <style>
-        /* 전체적인 스타일 및 색상 설정 */
+        /* 전체적인 스타일 및 색상 설정 (아이보리 & 레몬 톤) */
         :root {
-            --main-color: #9b72cf; /* 시그니처 라벤더 색상 */
-            --sub-color: #f3ebff;  /* 연보라 포인트 톤 */
-            --bg-color: #fcf9ff;   /* 눈이 편안한 크림/연보라 배경 */
-            --text-color: #4a4058; /* 부드러운 짙은 회갈색 텍스트 */
+            --main-color: #f4c430; /* 산뜻한 레몬/골드 yellow 톤 */
+            --sub-color: #fff9e6;  /* 부드러운 레몬 크림 톤 */
+            --bg-color: #fbfaf5;   /* 눈이 편안한 아이보리 배경 */
+            --text-color: #555040; /* 따스하고 차분한 브라운/그레이 텍스트 */
             --white: #ffffff;
+            --accent-border: #f3e5ab;
         }
 
         body {
@@ -26,10 +27,11 @@
         /* 상단 네비게이션바 */
         header {
             background-color: var(--white);
-            box-shadow: 0 4px 15px rgba(155, 114, 207, 0.08);
+            box-shadow: 0 4px 15px rgba(244, 196, 48, 0.1);
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 2px solid var(--sub-color);
         }
 
         nav {
@@ -37,7 +39,7 @@
             justify-content: center;
             align-items: center;
             padding: 15px 20px;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
@@ -45,7 +47,7 @@
             text-decoration: none;
             color: var(--text-color);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             padding: 8px 14px;
             border-radius: 20px;
             transition: all 0.3s ease;
@@ -53,7 +55,7 @@
 
         nav a:hover {
             background-color: var(--sub-color);
-            color: var(--main-color);
+            color: #b38f00;
         }
 
         /* 메인 컨테이너 */
@@ -69,15 +71,15 @@
             border-radius: 24px;
             padding: 35px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(155, 114, 207, 0.05);
+            box-shadow: 0 8px 25px rgba(244, 196, 48, 0.06);
             border: 2px solid var(--sub-color);
         }
 
         h2 {
-            color: var(--main-color);
+            color: #c69f00;
             font-size: 1.4rem;
             margin-top: 0;
-            border-bottom: 2px dashed var(--sub-color);
+            border-bottom: 2px dashed var(--accent-border);
             padding-bottom: 10px;
         }
 
@@ -89,15 +91,15 @@
         }
 
         #home h1 {
-            color: var(--main-color);
-            font-size: 2.2rem;
+            color: #b38f00;
+            font-size: 2.1rem;
             margin-bottom: 10px;
         }
 
         /* 👤 Profile */
         .profile-box {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
             flex-wrap: wrap;
         }
@@ -105,6 +107,7 @@
             width: 120px;
             height: 120px;
             background-color: var(--sub-color);
+            border: 3px solid var(--main-color);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -112,19 +115,32 @@
             font-size: 3rem;
         }
 
-        /* 💻 Projects/Skills, 🌱 Growth, 🎬 Play Lab, ✉️ Contact */
+        /* 리스트 스타일 */
         ul {
             padding-left: 20px;
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
+        }
+
+        /* 태그 스타일 (기술 스택 등) */
+        .tag {
+            display: inline-block;
+            background-color: var(--sub-color);
+            color: #8c6d00;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
         }
 
         footer {
             text-align: center;
             padding: 30px;
-            color: #88789c;
+            color: #9c9378;
             font-size: 0.9rem;
         }
     </style>
@@ -147,20 +163,20 @@
 
         <!-- 🏠 Home -->
         <section id="home">
-            <h1>✨ 환영합니다! 은은한 별빛 스테이션 ✨</h1>
-            <p>고등학교 1학년, 꿈을 차곡차곡 쌓아가는 공간입니다.<br>저의 작은 우주에 오신 걸 환영해요! 💜</p>
+            <h1>🍋 레몬빛 영감이 피어나는 곳, 수현이의 로봇 연구실 ⚙️</h1>
+            <p>기계와 로봇을 사랑하는 고등학교 1학년 이수현의 공간입니다.<br>상상을 현실로 만드는 메이커의 여정에 환영해요! ✨</p>
         </section>
 
         <!-- 👤 Profile -->
         <section id="profile">
             <h2>👤 Profile</h2>
             <div class="profile-box">
-                <div class="profile-img">🌸</div>
+                <div class="profile-img">🤖</div>
                 <div>
-                    <p><strong>이름 / 별명:</strong> 김고일 / 몽글이</p>
-                    <p><strong>소속:</strong> 고등학교 1학년 (새싹 루키! 🌱)</p>
-                    <p><strong>취미:</strong> 예쁜 문구류 모으기, 플레이리스트 디깅, 코딩 공부 시작하기</p>
-                    <p><strong>MBTI:</strong> INFP (마음은 따스하고 생각은 반짝반짝 ✨)</p>
+                    <p><strong>이름:</strong> 이수현 (Soohyun Lee)</p>
+                    <p><strong>소속:</strong> 고등학교 1학년 / 로봇공학도를 꿈꾸는 예비 엔지니어 ⚙️</p>
+                    <p><strong>관심 분야:</strong> 기계 설계, 자율주행 알고리즘, 아두이노 메이킹</p>
+                    <p><strong>좋아하는 것:</strong> 레몬에이드 마시며 회로도 들여다보기, 레고 테크닉 조립하기 🍋</p>
                 </div>
             </div>
         </section>
@@ -168,51 +184,60 @@
         <!-- 💻 Projects/Skills -->
         <section id="projects">
             <h2>💻 Projects/Skills</h2>
-            <p>제가 지금까지 해본 작은 도전들과 관심 있는 기술들이에요!</p>
+            <p>제가 다룰 줄 아는 기술들과 차근차근 쌓아가고 있는 프로젝트예요!</p>
+            
+            <p><strong>🛠️ Skills & Tools</strong><br>
+                <span class="tag">Arduino</span>
+                <span class="tag">Python 기초</span>
+                <span class="tag">3D CAD (Tinkercad)</span>
+                <span class="tag">HTML/CSS</span>
+            </p>
+
+            <p><strong>💡 Projects</strong></p>
             <ul>
-                <li><strong>HTML/CSS 기초:</strong> 나만의 첫 웹사이트 직접 만들기 프로젝트 완료!</li>
-                <li><strong>Python 스터디:</strong> 기초 문법을 익히고 간단한 계산기 프로그램 만들어보기 🐍</li>
-                <li><strong>Notion 기록 습관:</strong> 일상과 공부 계획을 깔끔하게 정리하는 나만의 노하우 📝</li>
+                <li><strong>초음파 센서 장애물 회피 로봇:</strong> 아두이노와 모터 드라이버를 활용해 장애물을 피해가는 소형 스마트 로봇 제작 🚗💨</li>
+                <li><strong>3D 모델링 키링 디자인:</strong> CAD 프로그램을 이용해 나만의 맞춤형 로봇 모양 키링 모델링 완료 🔑</li>
+                <li><strong>스마트 방 문 여닫기 시뮬레이션:</strong> 서보 모터를 활용한 자동 제어 시스템 구상 중!</li>
             </ul>
         </section>
 
         <!-- 🌱 Growth -->
         <section id="growth">
             <h2>🌱 Growth (성장 일기)</h2>
-            <p>매일 조금씩 자라나는 저의 성장 기록장입니다.</p>
+            <p>엔지니어가 되기 위해 한 걸음씩 나아가는 저의 기록장이에요.</p>
             <ul>
-                <li><strong>2026. 3월:</strong> 고등학교 입학! 새로운 친구들과 설레는 첫 출발 🎒</li>
-                <li><strong>2026. 6월:</strong> 첫 중간고사 무사히 마치고 나만의 공부법 찾아가는 중 💡</li>
-                <li><strong>현재:</strong> 웹사이트 제작이라는 새로운 취미를 발견하고 한 뼘 더 성장 중!</li>
+                <li><strong>2026. 3월:</strong> 고등학교 진학 및 교내 메이커·로봇 동아리 가입 🤖</li>
+                <li><strong>2026. 5월:</strong> 파이썬 기초 문법 완주 & 간단한 로봇 제어 코드 작성 실습</li>
+                <li><strong>현재:</strong> 물리 법칙과 프로그래밍을 연결하며 더 넓은 공학의 세계를 탐험 중! 📚</li>
             </ul>
         </section>
 
         <!-- 🎬 Play Lab -->
         <section id="playlab">
-            <h2>🎬 Play Lab (취향 & 놀이터)</h2>
-            <p>제가 좋아하는 것들로 가득 채운 보물창고예요.</p>
+            <h2>🎬 Play Lab (공학 놀이터)</h2>
+            <p>공학적 호기심을 채우고 영감을 얻는 저만의 취미 공간입니다.</p>
             <ul>
-                <li>🎵 <strong>요즘 자주 듣는 플레이리스트:</strong> 감성적인 인디 음악과 로파이 힙합</li>
-                <li>📚 <strong>인생 책/영화:</strong> 마음에 위로를 주는 포근한 성장물</li>
-                <li>🎨 <strong>소소한 낙서:</strong> 아이패드로 끄적이는 귀여운 캐릭터 그리기</li>
+                <li>🤖 <strong>세계 로봇 대회 영상 시청:</strong> Boston Dynamics나 휴머노이드 로봇 발전사 찾아보기</li>
+                <li>🧩 <strong>메카니즘 탐구:</strong> 기어의 맞물림과 지렛대의 원리를 일상 속 사물에서 찾아보기</li>
+                <li>🎵 <strong>코딩할 때 듣는 플레이리스트:</strong> 집중력을 높여주는 상큼한 로파이(Lo-fi) 음악 🎧</li>
             </ul>
         </section>
 
         <!-- ✉️ Contact -->
         <section id="contact">
             <h2>✉️ Contact</h2>
-            <p>저에게 따뜻한 인사를 건네고 싶거나 궁금한 점이 있다면 아래로 연락 주세요!</p>
+            <p>로봇이나 기계 공학에 대해 함께 이야기 나누고 싶다면 언제든 연락 주세요!</p>
             <ul>
-                <li>📧 <strong>E-mail:</strong> my_sweet_email@email.com (예시)</li>
-                <li>💬 <strong>Instagram:</strong> @starry_space_01 (예시)</li>
-                <li>💌 방명록 기능은 조금 더 공부해서 다음에 추가해 볼게요!</li>
+                <li>📧 <strong>E-mail:</strong> soohyun_robot@school.com (예시)</li>
+                <li>💬 <strong>GitHub / Notion:</strong> @soohyun_maker (예시)</li>
+                <li>🍋 따뜻한 메시지와 피드백은 언제나 환영입니다!</li>
             </ul>
         </section>
 
     </div>
 
     <footer>
-        <p>© 2026. 고1 몽글이의 은은한 별빛 스테이션. All rights reserved. 💜</p>
+        <p>© 2026. 이수현(Soohyun Lee). All rights reserved. 🍋⚙️</p>
     </footer>
 
 </body>
